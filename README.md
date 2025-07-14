@@ -23,56 +23,6 @@ Include the library directly in your HTML:
 npm install nicepay-js-lib
 ```
 
-## Quick Start
-
-### 1. Setup Configuration
-
-```javascript
-// Initialize the library with your merchant credentials
-Nicepay.setup({
-  iMid: "YOUR_MERCHANT_ID",
-  isProduction: false
-});
-```
-
-### 2. Register a Transaction
-
-```javascript
-const registrationData = {
-  timeStamp: "20231201120000",
-  merchantToken: "YOUR_MERCHANT_TOKEN",
-  callBackUrl: "https://your-domain.com/callback",
-  amt: "10000",
-  merchantOrderId: "ORDER123",
-  goodsNm: "Test Product",
-  dbProcessUrl: "https://your-domain.com/process",
-  email: "customer@example.com",
-  cartData: "item1,item2"
-  ....
-};
-
-const response = await Nicepay.registerTransaction(registrationData);
-console.log(response);
-```
-
-### 3. Process Payment
-
-```javascript
-const paymentData = {
-  timeStamp: "20231201120000",
-  merchantToken: "YOUR_MERCHANT_TOKEN",
-  tXid: "TRANSACTION_ID_FROM_REGISTRATION",
-  cardNo: "4111111111111111",
-  cardExpYyMm: "2512",
-  cardCvv: "123",
-  cardHolderEmail: "customer@example.com",
-  cardHolderNm: "John Doe",
-  callBackUrl: "https://your-domain.com/callback"
-};
-
-await Nicepay.paymentTransaction(paymentData);
-```
-
 ## API Reference
 
 ### Configuration
@@ -119,20 +69,39 @@ Combined method to register and process payment in one call.
 **Example:**
 ```javascript
 const registrationData = {
-  timeStamp: "20231201120000",
-  merchantToken: "YOUR_MERCHANT_TOKEN",
-  callBackUrl: "https://your-domain.com/callback",
-  amt: "10000",
-  merchantOrderId: "ORDER123",
-  goodsNm: "Test Product",
-  dbProcessUrl: "https://your-domain.com/process",
-  email: "customer@example.com"
+  timeStamp:"20201123151515",
+  iMid:"TNICECC015",
+  payMethod:"01",
+  currency:"IDR",
+  amt:"100",
+  referenceNo:"ord12120201123151515",
+  goodsNm:"Test Transaction Nicepay",
+  billingNm:"John Doe",
+  billingPhone:"085173147531",
+  billingEmail:"it@nicepay.co.id",
+  billingAddr:"Jalan Bukit Berbunga 22",
+  billingCity:"Jakarta",
+  billingState:"DKI Jakarta",
+  billingPostCd:"12345",
+  billingCountry:"Indonesia",
+  description:"test cc",
+  deliveryNm:"dobleh@merchant.com",
+  deliveryPhone:"12345678",
+  deliveryAddr:"Jalan Bukit Berbunga 22",
+  deliveryCity:"Jakarta",
+  deliveryState:"DKI Jakarta",
+  deliveryPostCd:"12345",
+  deliveryCountry:"Indonesia",
+  dbProcessUrl:"https://httpdump.app/dumps/53eed530-a423-4c0b-94d1-67b0a82ffb25",
+  merchantToken: merchantToken,
+  userIP:"127.0.0.1",
+  cartData:"",
+  userAgent: "Mozilla",
+  instmntMon: "1",
+  instmntType:"1"
 };
 
 const paymentData = {
-  timeStamp: "20231201120000",
-  merchantToken: "YOUR_MERCHANT_TOKEN",
-  tXid: "TRANSACTION_ID_FROM_REGISTRATION",
   cardNo: "4111111111111111",
   cardExpYyMm: "2512",
   cardCvv: "123",
@@ -163,14 +132,36 @@ const merchantToken = generateMerchantToken()
 
 // 3. Register transaction
 const registrationData = {
-  timeStamp: "20231201120000",
+  timeStamp:"20201123151515",
+  iMid:"TNICECC015",
+  payMethod:"01",
+  currency:"IDR",
+  amt:"100",
+  referenceNo:"ord12120201123151515",
+  goodsNm:"Test Transaction Nicepay",
+  billingNm:"John Doe",
+  billingPhone:"085173147531",
+  billingEmail:"it@nicepay.co.id",
+  billingAddr:"Jalan Bukit Berbunga 22",
+  billingCity:"Jakarta",
+  billingState:"DKI Jakarta",
+  billingPostCd:"12345",
+  billingCountry:"Indonesia",
+  description:"test cc",
+  deliveryNm:"dobleh@merchant.com",
+  deliveryPhone:"12345678",
+  deliveryAddr:"Jalan Bukit Berbunga 22",
+  deliveryCity:"Jakarta",
+  deliveryState:"DKI Jakarta",
+  deliveryPostCd:"12345",
+  deliveryCountry:"Indonesia",
+  dbProcessUrl:"https://httpdump.app/dumps/53eed530-a423-4c0b-94d1-67b0a82ffb25",
   merchantToken: merchantToken,
-  callBackUrl: "https://your-domain.com/callback",
-  amt: "10000",
-  merchantOrderId: "ORDER123",
-  goodsNm: "Test Product",
-  dbProcessUrl: "https://your-domain.com/process",
-  email: "customer@example.com"
+  userIP:"127.0.0.1",
+  cartData:"",
+  userAgent: "Mozilla",
+  instmntMon: "1",
+  instmntType:"1"
 };
 
 // 4. Process payment
