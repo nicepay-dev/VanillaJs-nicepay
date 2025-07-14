@@ -1,0 +1,31 @@
+{
+  "name": "nicepay-js-lib",
+  "version": "1.0.0",
+  "description": "JavaScript library for Nicepay payment integration",
+  "main": "nicepay.js",
+  "unpkg": "nicepay.js",
+  "jsdelivr": "nicepay.min.js",
+  "files": [
+    "dist/",
+    "nicepay.js",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "uglifyjs nicepay.js -o dist/nicepay.min.js",
+    "build:dev": "",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "nicepay",
+    "payment",
+    "gateway",
+    "indonesia",
+    "ecommerce"
+  ],
+  "author": "IT NICEPAY",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicepay-dev/VanillaJs-nicepay.git"
+  }
+}
