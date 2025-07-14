@@ -55,7 +55,7 @@ const Nicepay = (function() {
       merchantToken: data.merchantToken,
       tXid: data.tXid,
       cardNo: data.cardNo,
-      cardExpYyMm: data.cardExpYyMm,
+      cardExpYymm: data.cardExpYymm,
       cardCvv: data.cardCvv,
       cardHolderEmail: data.cardHolderEmail,
       cardHolderNm: data.cardHolderNm,

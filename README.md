@@ -70,7 +70,6 @@ Combined method to register and process payment in one call.
 ```javascript
 const registrationData = {
   timeStamp:"20201123151515",
-  iMid:"TNICECC015",
   payMethod:"01",
   currency:"IDR",
   amt:"100",
@@ -93,7 +92,7 @@ const registrationData = {
   deliveryPostCd:"12345",
   deliveryCountry:"Indonesia",
   dbProcessUrl:"https://httpdump.app/dumps/53eed530-a423-4c0b-94d1-67b0a82ffb25",
-  merchantToken: merchantToken,
+  merchantToken: "YOUR-MERCHANT-TOKEN",
   userIP:"127.0.0.1",
   cartData:"",
   userAgent: "Mozilla",
@@ -103,7 +102,7 @@ const registrationData = {
 
 const paymentData = {
   cardNo: "4111111111111111",
-  cardExpYyMm: "2512",
+  cardExpYymm: "2512",
   cardCvv: "123",
   cardHolderEmail: "customer@example.com",
   cardHolderNm: "John Doe",
@@ -133,7 +132,6 @@ const merchantToken = generateMerchantToken()
 // 3. Register transaction
 const registrationData = {
   timeStamp:"20201123151515",
-  iMid:"TNICECC015",
   payMethod:"01",
   currency:"IDR",
   amt:"100",
@@ -166,11 +164,8 @@ const registrationData = {
 
 // 4. Process payment
 const paymentData = {
-  timeStamp: "20231201120000",
-  merchantToken: "YOUR_MERCHANT_TOKEN",
-  tXid: "TRANSACTION_ID_FROM_REGISTRATION",
   cardNo: "4111111111111111",
-  cardExpYyMm: "2512",
+  cardExpYymm: "2512",
   cardCvv: "123",
   cardHolderEmail: "customer@example.com",
   cardHolderNm: "John Doe",
