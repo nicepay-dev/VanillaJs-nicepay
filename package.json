@@ -1,6 +1,6 @@
 {
   "name": "nicepay-js-lib",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "JavaScript library for Nicepay payment integration",
   "main": "nicepay.js",
   "unpkg": "nicepay.js",
